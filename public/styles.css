@@ -1,0 +1,65 @@
+.encompassing-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 60px;
+}
+
+img {
+    height: 500px;
+}
+
+.top-container-right button {
+    width: 220px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-left: 160px;
+    
+}
+
+.top-container-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 80px;
+}
+
+.chosen-word-container {
+    font-size: 50px;
+}
+
+.keyboard{
+    display: flex;
+    width: 43%;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 70px;
+}
+
+.button-key{
+    background-color: grey;
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+}
+
+
+.chute {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
