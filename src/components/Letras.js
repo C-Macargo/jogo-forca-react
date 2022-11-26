@@ -4,7 +4,9 @@ const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p
 return (
     <>
     <div className="keyboard">
-        {alphabet.map((alphabet) => <button className="button-key" key={alphabet}>{alphabet}</button>)}
+
+        {alphabet.map((alphabet) => <button className="button-key" key={alphabet}>{alphabet.toUpperCase()}</button>)}
+
     </div>
     </>
 )

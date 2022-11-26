@@ -1,6 +1,17 @@
 
+import React from 'react'
 
-export default function Jogo (){
+
+export default function Jogo (props){
+
+    const [displayUnderlines, setDisplayUnderlines] = React.useState('')
+    
+
+
+    function activateWords(){
+        setDisplayUnderlines(props.underlines)
+    } 
+
 
     return(
         <div className="encompassing-container">
@@ -9,10 +20,10 @@ export default function Jogo (){
                 </div>
                 <div className="top-container-right">
                     <div className="word-chose-button">
-                        <button> Escolher Palavra</button>
+                        <button onClick={activateWords}>Escolher Palavra</button>
                     </div>
                     <div className="chosen-word-container">            
-                        _ _ _ _ _ _ _ _ _ _
+                        {displayUnderlines}
                     </div>
                 </div>
             </div>

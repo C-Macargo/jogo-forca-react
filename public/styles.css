@@ -41,7 +41,7 @@ img {
 
 .keyboard{
     display: flex;
-    width: 43%;
+    width: 45%;
     justify-content: center;
     flex-wrap: wrap;
     margin: auto;
@@ -49,10 +49,18 @@ img {
 }
 
 .button-key{
-    background-color: grey;
-    height: 50px;
-    width: 50px;
-    margin: 5px;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    background: #9FAAB5;
+    border: 1px solid #7AA7C7;
+    border-radius: 3px;
+    margin: 12px ;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
 }
 
 
