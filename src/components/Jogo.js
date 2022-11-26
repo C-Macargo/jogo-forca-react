@@ -4,12 +4,11 @@ import React from 'react'
 
 export default function Jogo (props){
 
-    const [displayUnderlines, setDisplayUnderlines] = React.useState('')
-    
 
 
     function activateWords(){
-        setDisplayUnderlines(props.underlines)
+        props.setDisplayUnderlines(props.underlines)
+        props.setActiveLetters("button-key-active")
     } 
 
 
@@ -23,7 +22,7 @@ export default function Jogo (props){
                         <button onClick={activateWords}>Escolher Palavra</button>
                     </div>
                     <div className="chosen-word-container">            
-                        {displayUnderlines}
+                        {props.displayUnderlines}
                     </div>
                 </div>
             </div>

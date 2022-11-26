@@ -16,16 +16,20 @@ console.log(underlines)
 
 function App() {
 
-    const [activeLetters, setActiveLetters] = React.useState('startLetter')
-
+    
+    const [activeLetters, setActiveLetters] = React.useState('button-key-inactive')
+    const [displayUnderlines, setDisplayUnderlines] = React.useState('')
 
     return (
         <>
-            <Jogo underlines={underlines}  ></Jogo>
-            <Letras></Letras>
+            <Jogo activeLetters ={activeLetters} setActiveLetters={setActiveLetters} 
+            underlines={underlines} displayUnderlines={displayUnderlines} setDisplayUnderlines={setDisplayUnderlines}></Jogo>
+            <Letras activeLetters ={activeLetters} setActiveLetters={setActiveLetters} ></Letras>
             <Chute></Chute>
         </>
     )
 }
 
 export default App 
+
+
