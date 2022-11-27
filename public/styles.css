@@ -87,3 +87,14 @@ img {
     justify-content: center;
 }
 
+
+.estatica{
+    align-items: center;
+    
+}
+
+.selecionada{
+    pointer-events:none;
+    background: #798A9F !important;
+    color: #6b7075 !important;
+}
