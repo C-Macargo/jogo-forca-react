@@ -1,3 +1,4 @@
+
 import Jogo from "./components/Jogo"
 import Letras from "./components/Letras"
 import Chute from "./components/Chute"
@@ -14,6 +15,7 @@ function App() {
     const [newShowing, setNewShowing] = useState([])
     const [ramdomWordNumber,setRamdomWordNumber ] = useState(Math.floor(Math.random() * palavras.length))
     const [underlines, setUnderlines] = useState([])
+    const [chosedword, setChosedword] = useState ("")
     const [arrChosenWord, setArrChosenWord] = useState(ramdomWordNumber)
     const [activeLetters, setActiveLetters] = React.useState('button-key-inactive')
     const [displayHiddenWord, setDisplayHiddenWord] = React.useState('')
@@ -27,10 +29,13 @@ function App() {
     const [statusColor, setStatusColor] = useState ("")
     const [hypothesesInput, setHypothesesInput] = useState ("")
     const [inputUnlocked, setInputUnlocked] = useState(true)
+
     return (
 
         <>
-            <Jogo 
+            <Jogo  
+                chosedword = {chosedword}
+                setChosedword = {setChosedword}
                 setInputUnlocked = {setInputUnlocked}
                 setClickedLetter = {setClickedLetter}
                 setStatusColor = {setStatusColor}
@@ -94,5 +99,4 @@ function App() {
 }
 
 export default App 
-
 

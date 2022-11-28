@@ -17,7 +17,9 @@ export default function Jogo({
     setErrorCounter,
     setStatusColor,
     setClickedLetter,
-    setInputUnlocked
+    setInputUnlocked,
+    setChosedword,
+    chosedword
 
 
 }){
@@ -35,6 +37,7 @@ export default function Jogo({
     }
 
     function activateWords(){
+
         setStatusColor("")
         setErrorCounter(0);
         setImage(errorCounter);
@@ -47,6 +50,7 @@ export default function Jogo({
         console.log(chosenWord)
         setClickedLetter([])
         setInputUnlocked(false)
+        setChosedword(chosenWord)
 
     } 
 
@@ -63,7 +67,7 @@ export default function Jogo({
                         <button data-test="choose-word" onClick={activateWords}>Escolher Palavra</button>
                     </div>
                     <div  className="chosen-word-container">            
-                        <h1 data-test="word" data-answer={`${chosenWord}`} className={`${statusColor}`} > {displayHiddenWord} </h1>
+                        <h1 data-test="word" data-answer={`${chosedword}`} className={`${statusColor}`} > {displayHiddenWord} </h1>
                     </div>
                 </div>
             </div>
