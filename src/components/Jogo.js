@@ -62,8 +62,8 @@ export default function Jogo({
                     <div className="word-chose-button">
                         <button data-test="choose-word" onClick={activateWords}>Escolher Palavra</button>
                     </div>
-                    <div data-test="word" data-answer={`${chosenWord}`} className="chosen-word-container">            
-                        <h1 className={`${statusColor}`} > {displayHiddenWord} </h1>
+                    <div  className="chosen-word-container">            
+                        <h1 data-test="word" data-answer={`${chosenWord}`} className={`${statusColor}`} > {displayHiddenWord} </h1>
                     </div>
                 </div>
             </div>
