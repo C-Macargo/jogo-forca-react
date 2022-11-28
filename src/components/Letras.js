@@ -69,8 +69,8 @@ export default function Letras(
                     <button
                         data-test="letter"
                         onClick={() => letterClicked(alphabet)}
-                        disabled={buttonIsDisabled}
-                        className={`${activeLetters} ${clickedLetters.includes(alphabet) ? "selecionada" : ""}`}
+                        disabled={!clickedLetters.includes(alphabet)? buttonIsDisabled : true}
+                        className={`${activeLetters} ${clickedLetters.includes(alphabet) ? "" : ""}`}
                         key={alphabet}>
                         {alphabet}
                     </button>)}
