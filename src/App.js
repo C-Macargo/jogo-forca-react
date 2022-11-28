@@ -63,6 +63,7 @@ function App() {
             </Jogo>
 
             <Letras    
+                setInputUnlocked= {setInputUnlocked}
                 setStatusColor = {setStatusColor}
                 statusColor = {statusColor}
                 setErrorCounter = {setErrorCounter}

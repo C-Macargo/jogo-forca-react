@@ -13,6 +13,7 @@ export default function Letras(
         setErrorCounter,
         setStatusColor,
         setButtonIsDisable,
+        setInputUnlocked
         
 
 
@@ -54,10 +55,12 @@ export default function Letras(
         setDisplayHiddenWord(finalWordAnswer)
         setStatusColor("lose")
         setButtonIsDisable(true)
+        setInputUnlocked(true)
 
     }else if(testar.toString() === finalWordAnswer.toString()){
         setStatusColor("win")
         setButtonIsDisable(true)
+        setInputUnlocked(true)
     }
     }
 
