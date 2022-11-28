@@ -11,7 +11,10 @@ export default function Letras(
         testar,
         setNewShowing,
         errorCounter,
-        setErrorCounter
+        setErrorCounter,
+        setStatusColor,
+        setButtonIsDisable,
+        
 
 
     }) {
@@ -25,8 +28,11 @@ export default function Letras(
     let afterErrorCounter = errorCounter        
 
     function letterClicked(alphabet) {
+
         if (!clickedLetter.includes(alphabet)) {
             setClickedLetter([...clickedLetter, alphabet])
+
+
         }
         testar = [...finalWordShowing]
         if (finalWordAnswer.includes(alphabet)) {
@@ -34,7 +40,6 @@ export default function Letras(
                 if (finalWordAnswer[i] === alphabet) {
                     testar[i] = alphabet
                     setNewShowing(testar)
-
                 }
             }
             setDisplayHiddenWord(testar)
@@ -43,9 +48,17 @@ export default function Letras(
             if(afterErrorCounter <= 5){
                 errorCounter++
                 setErrorCounter(errorCounter)
-                console.log(finalWordAnswer.length)
-                console.log(afterErrorCounter)
         }
+    }
+
+    if (errorCounter === 6){
+        setDisplayHiddenWord(finalWordAnswer)
+        setStatusColor("lose")
+        setButtonIsDisable(true)
+
+    }else if(testar.toString() === finalWordAnswer.toString()){
+        setStatusColor("win")
+        setButtonIsDisable(true)
     }
     }
 
@@ -55,9 +68,10 @@ export default function Letras(
             <div className="keyboard">
                 {alphabet.map((alphabet) =>
                     <button
+                        data-test="letter"
                         onClick={() => letterClicked(alphabet)}
                         disabled={buttonIsDisabled}
-                        className={`${activeLetters} ${clickedLetters.includes(alphabet) ? "selecionada" : "estatica"}`}
+                        className={`${activeLetters} ${clickedLetters.includes(alphabet) ? "selecionada" : ""}`}
                         key={alphabet}>
                         {alphabet}
                     </button>)}

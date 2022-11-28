@@ -79,12 +79,32 @@ img {
 }
 
 
-
 .chute {
-    margin-top: 20px;
     display: flex;
+    margin: auto;
+    margin-left: 600px;
     align-items: center;
-    justify-content: center;
+    width: 65%;
+    padding: 30px;
+    font-size: 20px;
+}
+
+.chute input {
+    border: 2px solid #cccdcd;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px #9eabb5;
+    width: 400px;
+    height: 30px;
+    margin: 0 18px 0 12px;
+}
+
+.chute button {
+    border: 2px solid #7ba6c7;
+    border-radius: 3px;
+    background-color: #e1ecf4;
+    color: #3c76a1;
+    width: 90px;
+    height: 36px;
 }
 
 
@@ -97,4 +117,12 @@ img {
     pointer-events:none;
     background: #798A9F !important;
     color: #6b7075 !important;
+}
+
+.lose{
+    color:red;
+}
+
+.win{
+    color:green
 }

@@ -11,8 +11,15 @@ export default function Jogo({
     setNewWanted,
     setNewShowing,
     errorCounter,
-    image
-    
+    image,
+    statusColor,
+    setImage,
+    setErrorCounter,
+    setStatusColor,
+    setClickedLetter,
+    setInputUnlocked
+
+
 }){
 
     let chosenWord = ""
@@ -28,7 +35,9 @@ export default function Jogo({
     }
 
     function activateWords(){
-
+        setStatusColor("")
+        setErrorCounter(0);
+        setImage(errorCounter);
         generateRandomWord()
         setButtonIsDisable(false)
         setDisplayHiddenWord(hiddenChosenWordArray)
@@ -36,6 +45,8 @@ export default function Jogo({
         setNewWanted(chosenWordArray)
         setNewShowing(hiddenChosenWordArray)
         console.log(chosenWord)
+        setClickedLetter([])
+        setInputUnlocked(false)
 
     } 
 
@@ -45,14 +56,14 @@ export default function Jogo({
         
         <div className="encompassing-container">
                 <div className="top-container-left">
-                    <img src={`./assets/forca${image ? errorCounter : errorCounter}.png`} alt="forca"></img>
+                    <img data-test="game-image" src={`./assets/forca${image ? errorCounter : errorCounter}.png`} alt="forca"></img>
                 </div>
                 <div className="top-container-right">
                     <div className="word-chose-button">
-                        <button onClick={activateWords}>Escolher Palavra</button>
+                        <button data-test="chose-word" onClick={activateWords}>Escolher Palavra</button>
                     </div>
-                    <div className="chosen-word-container">            
-                        <h1 > {displayHiddenWord} </h1>
+                    <div data-test="word" data-answer={`${chosenWord}`} className="chosen-word-container">            
+                        <h1 className={`${statusColor}`} > {displayHiddenWord} </h1>
                     </div>
                 </div>
             </div>

@@ -24,11 +24,19 @@ function App() {
     const [testar] = useState([])   
     const [errorCounter, setErrorCounter] = useState(0)
     const [image, setImage] = useState(errorCounter);
-
+    const [statusColor, setStatusColor] = useState ("")
+    const [hypothesesInput, setHypothesesInput] = useState ("")
+    const [inputUnlocked, setInputUnlocked] = useState(true)
     return (
-        <>
 
+        <>
             <Jogo 
+                setInputUnlocked = {setInputUnlocked}
+                setClickedLetter = {setClickedLetter}
+                setStatusColor = {setStatusColor}
+                setImage = {setImage}
+                setErrorCounter={setErrorCounter}
+                statusColor = {statusColor}
                 image = {image}
                 errorCounter = {errorCounter}
                 setNewWanted = {setNewWanted}
@@ -49,7 +57,9 @@ function App() {
                 setDisplayHiddenWord={setDisplayHiddenWord}>
             </Jogo>
 
-            <Letras 
+            <Letras    
+                setStatusColor = {setStatusColor}
+                statusColor = {statusColor}
                 setErrorCounter = {setErrorCounter}
                 errorCounter = {errorCounter}
                 setNewShowing={setNewShowing}
@@ -68,8 +78,17 @@ function App() {
                 activeLetters ={activeLetters}
                 setActiveLetters={setActiveLetters} >
             </Letras>
-
-            <Chute></Chute>
+            <Chute
+                setInputUnlocked = {setInputUnlocked}
+                inputUnlocked = {inputUnlocked}
+                setErrorCounter = {setErrorCounter}
+                setButtonIsDisable = {setButtonIsDisable}
+                setStatusColor = {setStatusColor}
+                setDisplayHiddenWord = {setDisplayHiddenWord}
+                setHypothesesInput = {setHypothesesInput}
+                hypothesesInput = {hypothesesInput}
+                newWanted = {newWanted}
+            ></Chute>
         </>
     )
 }
